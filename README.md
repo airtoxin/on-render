@@ -1,4 +1,4 @@
-# on-render
+# on-render [![Build Status](https://travis-ci.org/airtoxin/on-render.svg)](https://travis-ci.org/airtoxin/on-render)
 
 Execute a listener when a response render is called.
 
