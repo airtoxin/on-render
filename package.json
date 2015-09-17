@@ -2,14 +2,19 @@
   "name": "on-render",
   "version": "0.0.1",
   "description": "Execute a listener when a response render is called.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir lib --source-maps inline",
+    "watch": "babel src --out-dir lib --watch --source-maps inline",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --compilers js:babel/register && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/airtoxin/on-render.git"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "express",
     "middleware",
@@ -23,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/airtoxin/on-render/issues"
   },
-  "homepage": "https://github.com/airtoxin/on-render"
+  "homepage": "https://github.com/airtoxin/on-render",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "istanbul": "^0.3.20",
+    "mocha": "^2.3.2"
+  }
 }
