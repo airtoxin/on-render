@@ -1,7 +1,7 @@
 {
   "name": "on-render",
   "version": "1.0.0",
-  "description": "Execute a listener when a response render is called.",
+  "description": "express middleware that execute a listener when a response render is called.",
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec; rm -rf ./coverage"
