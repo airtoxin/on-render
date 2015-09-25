@@ -20,7 +20,7 @@ describe('create', function () {
 		app.set('view engine', 'jade');
 		app.get('/', function (req, res) {
 			res.render(template);
-		})
+		});
 
 		request.agent(app)
 			.get('/')
@@ -43,12 +43,12 @@ describe('create', function () {
 			passCount++;
 			mark = req.app.__on_render_injected__;
 			next();
-		})
+		});
 		app.set('views', path.join(__dirname, 'views'));
 		app.set('view engine', 'jade');
 		app.get('/', function (req, res) {
 			res.send('ok');
-		})
+		});
 
 		request.agent(app)
 			.get('/')
@@ -73,12 +73,12 @@ describe('create', function () {
 			passCount++;
 			mark = req.app.__on_render_injected__;
 			next();
-		})
+		});
 		app.set('views', path.join(__dirname, 'views'));
 		app.set('view engine', 'jade');
 		app.get('/', function (req, res) {
 			res.render(template);
-		})
+		});
 
 		request.agent(app)
 			.get('/')
@@ -105,7 +105,7 @@ describe('create', function () {
 		app.set('view engine', 'jade');
 		app.get('/', function (req, res) {
 			res.render(template, opt);
-		})
+		});
 
 		request.agent(app)
 			.get('/')
