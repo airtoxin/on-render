@@ -1,6 +1,5 @@
 var path = require('path');
 var assert = require('assert');
-var http = require('http');
 var request = require('supertest');
 var express = require('express');
 var onRender = require('..');
@@ -35,7 +34,7 @@ describe('create', function () {
 	it('should not called on-render middleware when res.render not called', function (done) {
 		var app = express();
 		var passCount = 0;
-		app.use(onRender.create(function (req, res, rendering, view, options) {
+		app.use(onRender.create(function () {
 			passCount++;
 		}));
 		var mark = null;
@@ -63,7 +62,7 @@ describe('create', function () {
 	it('should called on-render middleware when res.render called', function (done) {
 		var app = express();
 		var passCount = 0;
-		app.use(onRender.create(function (req, res, rendering, view, options) {
+		app.use(onRender.create(function (req, res, rendering, view) {
 			assert.strictEqual(rendering, renderContent);
 			assert.strictEqual(view, template);
 			passCount++;
