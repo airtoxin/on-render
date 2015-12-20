@@ -1,6 +1,6 @@
 {
   "name": "on-render",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "express middleware that execute a listener when a response render is called.",
   "main": "index.js",
   "scripts": {
